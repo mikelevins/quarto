@@ -54,7 +54,15 @@ public extension Array {
         return sum
     }
     
+    var head : Element {
+        return self[0]
+    }
+    
     func subseq (from from: Int, below: Int) -> [Element] {
         return Array(self[from..<below])
+    }
+    
+    var tail : [Element] {
+        return Array(self[1..<count])
     }
 }

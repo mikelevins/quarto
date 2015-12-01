@@ -54,10 +54,18 @@ public extension String {
         return sum
     }
     
+    var head : Character {
+        return characters[characters.startIndex]
+    }
+    
     func subseq (from from: Int, below: Int) -> String {
         let range = Range(start: self.startIndex.advancedBy(from),
             end: (self.startIndex.advancedBy(below)))
         return self.substringWithRange(range)
+    }
+    
+    var tail : String {
+        return self.subseq(from: 1, below: characters.count)
     }
     
 }
