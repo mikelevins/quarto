@@ -26,6 +26,7 @@ func isEven (n: Int) -> Bool { return (n % 2) == 0 }
 [0,1,2,3].concat([4,5,6])
 [0,1,4,5,6,8,9].countIf(isEven)
 [0,1,2,3,4,5,6].drop(3)
+[0,1,2,3,4,5,6].element(3)
 [0,1,2,3,4].head
 [0,1,2,3,4].tail
 [0,1,2,3,4,5,6].subseq(from: 2, below: 5)
@@ -40,6 +41,7 @@ func isEqualToC (ch: Character) -> Bool { return (ch == Character("C")) }
 "ABC".concat("DEF")
 "ABCCCDEF".countIf(isEqualToC)
 "ABCDEF".drop(3)
+"ABCDEF".element(3)
 "ABCDEF".head
 "ABCDEF".tail
 "ABCDEFGHIJKLMNOP".subseq(from: 2, below: 5)

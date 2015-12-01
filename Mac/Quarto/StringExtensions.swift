@@ -54,11 +54,14 @@ public extension String {
         return sum
     }
     
-    
     func drop (n: Int) -> String {
         return self.subseq(from: n, below: characters.count)
     }
     
+    func element(n: Int) -> Character{
+        return self[self.startIndex.advancedBy(n)]
+    }
+
     var head : Character {
         return characters[characters.startIndex]
     }

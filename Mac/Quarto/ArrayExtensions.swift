@@ -58,6 +58,10 @@ public extension Array {
         return self.subseq(from: n, below: count)
     }
     
+    func element(n: Int) -> Element{
+        return self[n]
+    }
+    
     var head : Element {
         return self[0]
     }
