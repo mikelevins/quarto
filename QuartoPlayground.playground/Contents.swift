@@ -55,8 +55,33 @@ extension String {
         return self + String(ch)
     }
     
+    func by (count: Int) -> [String] {
+        let limit = self.characters.count
+        var result: [String] = []
+        if (count <= limit) {
+            result = [self.subseq(from: 0, below: count)]
+            let indexes = Indexes(of: self, by: count)
+            while let i = indexes.next() {
+                if ((i+count)<limit) {
+                    result = result + [self.subseq(from: i, below: i+count)]
+                } else {
+                    result = result + [self.subseq(from: i, below: limit)]
+                }
+            }
+        } else {
+            result = [self]
+        }
+        return result
+    }
+    
     func concat (str: String) -> String {
         return self + str
+    }
+    
+    func subseq (from from: Int, below: Int) -> String {
+        let range = Range(start: self.startIndex.advancedBy(from),
+                          end: (self.startIndex.advancedBy(below)))
+        return self.substringWithRange(range)
     }
     
 }
@@ -64,7 +89,9 @@ extension String {
 "ABCDEFG".any
 "BCD".addFirst("A")
 "ABC".addLast("D")
+"ABCDEFGHIJKL".by(5)
 "ABC".concat("DEF")
+"ABCDEFGHIJKLMNOP".subseq(from: 2, below: 5)
 
 extension Array {
     var any : Element {
@@ -81,13 +108,37 @@ extension Array {
         return self + [thing]
     }
     
+    func by (count: Int) -> [[Element]] {
+        let limit = self.count
+        var result: [[Element]] = []
+        if (count <= limit) {
+            result = [self.subseq(from: 0, below: count)]
+            let indexes = Indexes(of: self, by: count)
+            while let i = indexes.next() {
+                if ((i+count)<limit) {
+                    result = result + [self.subseq(from: i, below: i+count)]
+                } else {
+                    result = result + [self.subseq(from: i, below: limit)]
+                }
+            }
+        } else {
+            result = [self]
+        }
+        return result
+    }
+    
     func concat (things: Array) -> Array {
         return self + things
+    }
+    
+    func subseq (from from: Int, below: Int) -> [Element] {
+        return Array(self[from..<below])
     }
 }
 
 [0,1,2,3,4,5].any
 [1,2,3].addFirst(0)
 [0,1,2].addLast(3)
+[0,1,2,3,4,5,6,7].by(3)
 [0,1,2,3].concat([4,5,6])
-
+[0,1,2,3,4,5,6].subseq(from: 2, below: 5)
