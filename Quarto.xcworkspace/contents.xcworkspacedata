@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:QuartoPlayground.playground">
+   </FileRef>
+   <Group
+      location = "group:Mac"
+      name = "Mac">
+      <Group
+         location = "group:Quarto"
+         name = "Quarto">
+         <FileRef
+            location = "group:ArrayExtensions.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Indexes.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Info.plist">
+         </FileRef>
+         <FileRef
+            location = "group:Quarto.h">
+         </FileRef>
+         <FileRef
+            location = "group:StringExtensions.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Quarto.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>

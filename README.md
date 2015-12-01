@@ -1,16 +1,10 @@
 # quarto
 
-folio in Swift
+**quarto** is an experimental framework in which some of the functional idioms of folio are expressed in Swift.
 
-**quarto** is an experiment in adapting the folio APIs for use in
-  Swift. I've been tinkering with Swift lately and found that it's not
-  horrible. I might actually like it. Functional idioms are a little
-  more foreign to it than I'd ideally like, though, so I thought I'd
-  experiment with constructing Swift versions of some of the idioms
-  from folio.
+I've been tinkering with Swift for a short while and finding it not bad. I might even be starting to like it.
 
-This is experimental code. Don't expect it to be particularly
-complete, efficient, or bug-free.
+It's not a functional language, really, but we might say it's functional-friendly. It includes some features that make functional idioms reasonably comfortable to express, so I thought I'd see how much of folio I can manage in it.
 
-quarto is licensed under the MIT license (see the included LICENSE file)
+**quarto** is strictly experimental at this stage. Please don't expect it to be fast, complete, or bug-free.
 
