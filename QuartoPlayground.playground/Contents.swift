@@ -17,24 +17,20 @@ indexes2.next()
 indexes2.next()
 
 // Arrays
-
-func isOdd(n: Int) -> Bool {
-    let r = n % 2
-    return (r != 0)
-}
+func isEven (n: Int) -> Bool { return (n % 2) == 0 }
 
 [0,1,2,3,4,5].any
 [1,2,3].addFirst(0)
 [0,1,2].addLast(3)
 [0,1,2,3,4,5,6,7].by(3)
 [0,1,2,3].concat([4,5,6])
-[0,2,4,5,6,8,9].countIf(isOdd)
+[0,1,4,5,6,8,9].countIf(isEven)
+[0,1,2,3,4,5,6].drop(3)
 [0,1,2,3,4].head
 [0,1,2,3,4].tail
 [0,1,2,3,4,5,6].subseq(from: 2, below: 5)
 
 // Strings
-
 func isEqualToC (ch: Character) -> Bool { return (ch == Character("C")) }
 
 "ABCDEFG".any
@@ -43,6 +39,7 @@ func isEqualToC (ch: Character) -> Bool { return (ch == Character("C")) }
 "ABCDEFGHIJKL".by(5)
 "ABC".concat("DEF")
 "ABCCCDEF".countIf(isEqualToC)
+"ABCDEF".drop(3)
 "ABCDEF".head
 "ABCDEF".tail
 "ABCDEFGHIJKLMNOP".subseq(from: 2, below: 5)

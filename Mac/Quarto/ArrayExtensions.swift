@@ -54,6 +54,10 @@ public extension Array {
         return sum
     }
     
+    func drop (n: Int) -> [Element] {
+        return self.subseq(from: n, below: count)
+    }
+    
     var head : Element {
         return self[0]
     }
