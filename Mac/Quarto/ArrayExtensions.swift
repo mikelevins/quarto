@@ -62,8 +62,32 @@ public extension Array {
         return self[n]
     }
     
+    func every (test: Element -> Bool) -> Bool {
+        for elt in self {
+            if !test(elt) { return false }
+        }
+        return true
+    }
+    
     var head : Element {
         return self[0]
+    }
+    
+    var indexes : [Int] {
+        if self.count > 0 {
+            let indexgen = Indexes(of: self)
+            var result : [Int] = [0]
+            while let i = indexgen.next() {
+                result += [i]
+            }
+            return result
+        } else {
+            return []
+        }
+    }
+    
+    var isEmpty : Bool {
+        return (self.count == 0)
     }
     
     func subseq (from from: Int, below: Int) -> [Element] {

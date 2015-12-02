@@ -62,8 +62,33 @@ public extension String {
         return self[self.startIndex.advancedBy(n)]
     }
 
+    
+    func every (test: Character -> Bool) -> Bool {
+        for elt in self.characters {
+            if !test(elt) { return false }
+        }
+        return true
+    }
+    
+    func filter( test: Character -> Bool ) -> String {
+        return String (self.characters.filter(test))
+    }
+
     var head : Character {
         return characters[characters.startIndex]
+    }
+    
+    var indexes : [Int] {
+        if self.characters.count > 0 {
+            let indexgen = Indexes(of: self)
+            var result : [Int] = [0]
+            while let i = indexgen.next() {
+                result += [i]
+            }
+            return result
+        } else {
+            return []
+        }
     }
     
     func subseq (from from: Int, below: Int) -> String {

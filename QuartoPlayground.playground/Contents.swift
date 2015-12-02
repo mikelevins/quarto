@@ -27,9 +27,19 @@ func isEven (n: Int) -> Bool { return (n % 2) == 0 }
 [0,1,4,5,6,8,9].countIf(isEven)
 [0,1,2,3,4,5,6].drop(3)
 [0,1,2,3,4,5,6].element(3)
+[0,2,4,6].every(isEven)
+[0,2,3,6].every(isEven)
+[0,1,2,3,4,5].filter(isEven) // built-in for Array
+[1,3,5].filter(isEven) // built-in for Array
 [0,1,2,3,4].head
-[0,1,2,3,4].tail
+let foo: [Int] = []
+foo.indexes
+["A","B","C","D","E"].indexes
+let bar: [Int] = []
+bar.isEmpty
+[0,1].isEmpty
 [0,1,2,3,4,5,6].subseq(from: 2, below: 5)
+[0,1,2,3,4].tail
 
 // Strings
 func isEqualToC (ch: Character) -> Bool { return (ch == Character("C")) }
@@ -42,7 +52,14 @@ func isEqualToC (ch: Character) -> Bool { return (ch == Character("C")) }
 "ABCCCDEF".countIf(isEqualToC)
 "ABCDEF".drop(3)
 "ABCDEF".element(3)
+"CCCCC".every(isEqualToC)
+"CCBCC".every(isEqualToC)
+"ABCCDEF".filter(isEqualToC)
 "ABCDEF".head
-"ABCDEF".tail
+"".indexes
+"ABCDEF".indexes
+"".isEmpty // built in for String
+"ABC".isEmpty // built in for String
 "ABCDEFGHIJKLMNOP".subseq(from: 2, below: 5)
+"ABCDEF".tail
 
