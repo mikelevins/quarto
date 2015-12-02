@@ -31,6 +31,8 @@ func isEven (n: Int) -> Bool { return (n % 2) == 0 }
 [0,2,3,6].every(isEven)
 [0,1,2,3,4,5].filter(isEven) // built-in for Array
 [1,3,5].filter(isEven) // built-in for Array
+[].findIf(isEven)
+[1,2,3].findIf(isEven)
 [0,1,2,3,4].head
 let foo: [Int] = []
 foo.indexes
@@ -55,6 +57,8 @@ func isEqualToC (ch: Character) -> Bool { return (ch == Character("C")) }
 "CCCCC".every(isEqualToC)
 "CCBCC".every(isEqualToC)
 "ABCCDEF".filter(isEqualToC)
+"".findIf(isEqualToC)
+"ABCD".findIf(isEqualToC)
 "ABCDEF".head
 "".indexes
 "ABCDEF".indexes

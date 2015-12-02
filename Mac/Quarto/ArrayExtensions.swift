@@ -69,6 +69,15 @@ public extension Array {
         return true
     }
     
+    func findIf (test: Element -> Bool) -> Element? {
+        for elt in self {
+            if (test(elt)) {
+                return elt
+            }
+        }
+        return nil
+    }
+    
     var head : Element {
         return self[0]
     }

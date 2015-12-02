@@ -74,6 +74,16 @@ public extension String {
         return String (self.characters.filter(test))
     }
 
+    
+    func findIf (test: Character -> Bool) -> Character? {
+        for elt in self.characters {
+            if (test(elt)) {
+                return elt
+            }
+        }
+        return nil
+    }
+
     var head : Character {
         return characters[characters.startIndex]
     }
