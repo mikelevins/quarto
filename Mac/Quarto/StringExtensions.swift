@@ -101,6 +101,10 @@ public extension String {
         }
     }
     
+    func leave (n: Int) -> String {
+        return self.subseq(from: (characters.count - n), below: characters.count)
+    }
+    
     func subseq (from from: Int, below: Int) -> String {
         let range = Range(start: self.startIndex.advancedBy(from),
             end: (self.startIndex.advancedBy(below)))
@@ -109,6 +113,10 @@ public extension String {
     
     var tail : String {
         return self.subseq(from: 1, below: characters.count)
+    }
+    
+    func take (n: Int) -> String {
+        return self.subseq(from: 0, below: n)
     }
     
 }

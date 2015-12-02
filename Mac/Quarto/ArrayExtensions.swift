@@ -99,11 +99,19 @@ public extension Array {
         return (self.count == 0)
     }
     
+    func leave (n: Int) -> [Element] {
+        return self.subseq(from: (count - n), below: count)
+    }
+
     func subseq (from from: Int, below: Int) -> [Element] {
         return Array(self[from..<below])
     }
     
     var tail : [Element] {
         return Array(self[1..<count])
+    }
+    
+    func take (n: Int) -> [Element] {
+        return self.subseq(from: 0, below: n)
     }
 }

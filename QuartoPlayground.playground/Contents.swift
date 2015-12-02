@@ -40,8 +40,10 @@ foo.indexes
 let bar: [Int] = []
 bar.isEmpty
 [0,1].isEmpty
+[0,1,2,3,4,5,6].leave(3)
 [0,1,2,3,4,5,6].subseq(from: 2, below: 5)
 [0,1,2,3,4].tail
+[0,1,2,3,4,5,6].take(3)
 
 // Strings
 func isEqualToC (ch: Character) -> Bool { return (ch == Character("C")) }
@@ -64,6 +66,9 @@ func isEqualToC (ch: Character) -> Bool { return (ch == Character("C")) }
 "ABCDEF".indexes
 "".isEmpty // built in for String
 "ABC".isEmpty // built in for String
+"ABCDEFGHIJKLMNOP".leave(3)
 "ABCDEFGHIJKLMNOP".subseq(from: 2, below: 5)
 "ABCDEF".tail
+"ABCDEFGHIJKLMNOP".take(3)
+
 
